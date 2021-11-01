@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ gifttitle }}</title>
+    <link rel="stylesheet" href="{% static 'gifts/styles/base.css' %}">
+    <link rel="stylesheet" href="{% static 'gifts/styles/details.css' %}">
+</head>
+<body>
+    <main>
+        {% if gift_found %}
+            <article>
+                <img height="300" src="{{ giftimage.url }}" alt="">
+
+                <section id='Location'>
+                    <h2>{{ gifttitle }}</h2>
+                </section>
+
+                <section id='Location'>
+                    <a href="{{ gifturl }}" class="btn" target=_blank>Ссылка</a>
+                </section>
+
+                <section id='description'>
+                    <p>{{ gifdescription }}</p>
+                    <footer>
+                        <p>Хочешь что-то уточнить? <a href="">Напиши</a></p>
+                    </footer>
+                </section>
+
+                <section id="registration">
+                    <h2>Внеси свой подарок</h2>
+                </section>
+            </article>
+        {% else %}
+            <p>No gift found, sorry!</p>
+        {% endif %}
+    </main>
+</body>
+</html>

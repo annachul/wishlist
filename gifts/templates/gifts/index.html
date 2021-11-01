@@ -7,12 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gifts</title>
     <link rel="stylesheet" href="{% static 'gifts/styles/base.css' %}">
-
+    <link rel="stylesheet" href="{% static 'gifts/styles/giftsbase.css' %}">
 </head>
 <body>
- <h1>I am a queen of the world</h1>
- <p>I want a lot of gifts</p>
-
- <h2>{{ gifts.0.title }}</h2>
+ <header>
+<nav><a href="/gifts" id="main-logo">Подарки для Анечки Чуль</a></nav>
+<h1>Здесь Вы можете выбрать подарок для меня на предстоящие праздники.</h1>
+ </header>
+ <main>
+<section>
+<h2>Список подарков</h2>
+<ol>
+{% for gift in gifts %}
+<li class='gift'>
+    <article>
+       <div class='gift-summary'>
+        <div class='gift-image'>
+            <img height="300" src="{{ gift.image.url }}" alt="">
+        </div>
+        <div clss='gift-details'> 
+            <h3>{{ gift.title }}</h3>
+            <address>{{ gift.description }}</address>
+        </div>
+       </div>
+       <div class="gifts-actions">
+        <a href="{% url  'gift_detail' gift.id %}" class="btn">Подробнее</a>
+       </div>
+    </article>
+</li>
+{% endfor %}
+</ol>
+</section>
+ </main>
 </body>
 </html>
