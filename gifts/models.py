@@ -10,3 +10,5 @@ class Gifts(models.Model):
     url = models.URLField(max_length=300)
     image = models.ImageField(upload_to='images', null=True)
 
+    def __str__(self):
+        return f'{self.title} - {self.id}'
