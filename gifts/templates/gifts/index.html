@@ -19,22 +19,41 @@
 <h2>Список подарков</h2>
 <ol>
 {% for gift in gifts %}
-<li class='gift'>
-    <article>
-       <div class='gift-summary'>
-        <div class='gift-image'>
-            <img height="300" src="{{ gift.image.url }}" alt="">
+    {% if gift.taken %}
+        <li class='gift2'>
+            <article>
+            <div class='gift-summary'>
+                <div class='gift-image'>
+                    <img height="300" src="{{ gift.image.url }}" alt="">
+                </div>
+                <div clss='gift-details'> 
+                    <h3>{{ gift.title }}</h3>
+                    <address>{{ gift.description }}</address>
+                </div>
+            </div>
+            <div class="gifts-actions">
+                <a href="{% url  'gift_detail' gift.id %}" class="btn">Подробнее</a>
+            </div>
+            </article>
+         </li>
+    {% else %}
+    <li class='gift'>
+        <article>
+        <div class='gift-summary'>
+            <div class='gift-image'>
+                <img height="300" src="{{ gift.image.url }}" alt="">
+            </div>
+            <div clss='gift-details'> 
+                <h3>{{ gift.title }}</h3>
+                <address>{{ gift.description }}</address>
+            </div>
         </div>
-        <div clss='gift-details'> 
-            <h3>{{ gift.title }}</h3>
-            <address>{{ gift.description }}</address>
+        <div class="gifts-actions">
+            <a href="{% url  'gift_detail' gift.id %}" class="btn">Подробнее</a>
         </div>
-       </div>
-       <div class="gifts-actions">
-        <a href="{% url  'gift_detail' gift.id %}" class="btn">Подробнее</a>
-       </div>
-    </article>
-</li>
+        </article>
+    </li>  
+    {% endif %}
 {% endfor %}
 </ol>
 </section>

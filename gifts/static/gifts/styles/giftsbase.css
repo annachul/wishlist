@@ -11,12 +11,18 @@ section {
   
   .gift {
     margin: 1rem 0;
-    background-color: #350490;
+    background-color: #77b369e7;
     padding: 2rem;
-    color: white;
-    border-radius: 4px;
-  }
-  
+    color: rgb(255, 255, 255);
+    border-radius: 4px;}
+
+  .gift2 {
+    margin: 1rem 0;
+    background-color: #aa5383e7;
+    padding: 2rem;
+    color: rgb(245, 245, 245);
+    border-radius: 4px;}
+
   .gift-summary {
     display: flex;
     align-items: flex-start;
@@ -52,7 +58,7 @@ section {
   .gift-actions .btn {
     background-color: #cb82fb;
     border-color: #cb82fb;
-    color: #350490;
+    color: #000000;
     padding: 0.75rem 2rem;
   }
   

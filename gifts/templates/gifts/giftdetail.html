@@ -13,26 +13,35 @@
     <main>
         {% if gift_found %}
             <article>
-                <img height="300" src="{{ giftimage.url }}" alt="">
+                <img id="main-image" height="300" src="{{ giftimage.url }}" alt="">
 
                 <section id='Location'>
                     <h2>{{ gifttitle }}</h2>
                 </section>
 
                 <section id='Location'>
-                    <a href="{{ gifturl }}" class="btn" target=_blank>Ссылка</a>
+                    <a href="{{ gifturl }}" class="btn" target=_blank>Ссылочка</a>
                 </section>
 
                 <section id='description'>
                     <p>{{ gifdescription }}</p>
                     <footer>
-                        <p>Хочешь что-то уточнить? <a href="">Напиши</a></p>
+                        <p>Хочешь что-то уточнить? <a href="https://t.me/annchul" target=_blank>Напиши</a></p>
                     </footer>
                 </section>
-
-                <section id="registration">
-                    <h2>Внеси свой подарок</h2>
-                </section>
+                
+                {% if taken %}
+                <p>Куплено!</p>
+                {% else %}
+                    <section>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div id="registration-action">
+                            <button>Забронировать</button>
+                        </div>
+                    </form>
+                    </section> 
+                {% endif %}
             </article>
         {% else %}
             <p>No gift found, sorry!</p>
