@@ -24,7 +24,8 @@ def giftdetail(request, id):
                 'gifturl':giftselect.url,
                 'giftimage':giftselect.image,
                 'form':gift_conformation,
-                'taken':giftselect.taken
+                'taken':giftselect.taken,
+                'instructions':giftselect.instruction
              })
         else:
             giftselect = Gifts.objects.get(id=id)

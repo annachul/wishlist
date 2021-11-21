@@ -9,6 +9,7 @@ class Gifts(models.Model):
     taken = models.BooleanField()
     url = models.URLField(max_length=300)
     image = models.ImageField(upload_to='images', null=True)
+    instruction = models.TextField(null=True)
 
     def __str__(self):
         return f'{self.title} - {self.id}'

@@ -8,7 +8,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #ccc3db;
+  background-color: #fafafa;
   color: #000000;
 }
 
@@ -19,38 +19,66 @@ h3 {
   color: #222224;
 }
 
-button,
 .btn {
   cursor: pointer;
   font: inherit;
   padding: 0.5rem 1.5rem;
-  background-color: #350490;
-  border: 1px solid #350490;
+  background-color: #057e33;
+  border: 1px solid #025502;
   color: white;
   border-radius: 4px;
   text-decoration: none;
 }
 
-button:hover,
-.btn:hover {
-  background-color: #5e3f99;
-  border-color: #58447c;
-}
+
+.btn2 {
+  cursor: pointer;
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  background-color: #991e28;
+  border: 1px solid #970606;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;}
+
+
+
 
 #main-header {
-    width: 100%;
-    text-align: center;
-    padding: 2rem 0;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
 }
+
 
 #main-header h1 {
     font-size: 1.5rem;
 }
 
 #main-logo {
-    font-size: 3rem;
+
+    font-size: 1.5rem;
     font-family: 'Roboto Slab', sans-serif;
     text-decoration: none;
-    color: #001302;
+    color: #ffffff;
     font-weight: bold;
+    border: 1px solid #025502;
+    background-color: #057e33;
+    padding: 0.5rem 1.5rem;
+}
+
+#main-logo:hover {
+  color: #444444;
+}
+
+header {
+  text-align: center;
+  margin: 40px;
+}
+
+#desc {
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  padding: 0.5rem 1.5rem;
 }

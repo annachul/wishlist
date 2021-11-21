@@ -10,38 +10,59 @@
     <link rel="stylesheet" href="{% static 'gifts/styles/details.css' %}">
 </head>
 <body>
+    <header>
+        <nav><a href="/gifts" id="main-logo">Подарочная</a></nav>
+        <h1>Здесь Вы можете выбрать подарок для меня на предстоящие праздники.</h1>
+        <p id='desc'>Как это работает: ты решаешь, какой подарок тебе нравится больше из списка ниже. Он должен быть выделен зеленым цветом: красные уже заняты. На странице каждого подарка будет ссылка на него и как его подарить. Нажимая кнопку забронировать, ты выбираешь подарок и больше никто не сможет его купить. </p>
+    </header>
     <main>
         {% if gift_found %}
-            <article>
-                <img id="main-image" height="300" src="{{ giftimage.url }}" alt="">
+            {% if taken %}
+                <article class='article2'>
+                    <img id="main-image2" height="300" src="{{ giftimage.url }}" alt="">
 
-                <section id='Location'>
-                    <h2>{{ gifttitle }}</h2>
-                </section>
+                    <section id='Location'>
+                        <h2>{{ gifttitle }}</h2>
+                    </section>
 
-                <section id='Location'>
-                    <a href="{{ gifturl }}" class="btn" target=_blank>Ссылочка</a>
-                </section>
+                    <section id='Location'>
+                        <a href="{{ gifturl }}" class="btn2" target=_blank>Ссылочка</a>
+                    </section>
 
-                <section id='description'>
-                    <p>{{ gifdescription }}</p>
-                    <footer>
-                        <p>Хочешь что-то уточнить? <a href="https://t.me/annchul" target=_blank>Напиши</a></p>
-                    </footer>
-                </section>
-                
-                {% if taken %}
-                <p>Куплено!</p>
-                {% else %}
+                    <section id='description'>
+                        <footer>
+                            <p>Хочешь что-то уточнить? <a href="https://t.me/annchul" target=_blank>Напиши</a></p>
+                        </footer>
+                    </section>
+                    <p>Куплено!</p>
+            {% else %}
+                <article class='article'>
+                    <img id="main-image" height="300" src="{{ giftimage.url }}" alt="">
+
+                    <section id='Location'>
+                        <h2>{{ gifttitle }}</h2>
+                    </section>
+
+                    <section id='Location'>
+                        <a href="{{ gifturl }}" class="btn" target=_blank>Ссылочка</a>
+                    </section>
+
+                    <section id='description'>
+                        <h3>Как это подарить?</h3>
+                        <p>{{ instructions }}</p>
+                        <footer>
+                            <p>Хочешь что-то уточнить? <a href="https://t.me/annchul" target=_blank>Напиши</a></p>
+                        </footer>
+                    </section>
                     <section>
                     <form method="POST">
                         {% csrf_token %}
                         <div id="registration-action">
-                            <button>Забронировать</button>
+                            <button class='btn'>Забронировать</button>
                         </div>
                     </form>
                     </section> 
-                {% endif %}
+            {% endif %}
             </article>
         {% else %}
             <p>No gift found, sorry!</p>
