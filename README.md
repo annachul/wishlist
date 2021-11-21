@@ -15,5 +15,7 @@ https://virtualenv.pypa.io/en/latest/installation.html
 
 ## Run
 git clone git@github.com:annachul/wishlist.git
+
 cd wishlist
+
 ./manage.py runserver 
