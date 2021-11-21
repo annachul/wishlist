@@ -4,21 +4,19 @@ Web app for choosing a gift. Simple project for training Django.
 ## Setup
 Prerequisites: 
 
-Install pip:
+Install pip:  
 https://pip.pypa.io/en/stable/installation/
 
-Install Django:
+Install Django:  
 https://docs.djangoproject.com/en/3.2/topics/install/
 
-Install virtualenv:
+Install virtualenv:  
 https://virtualenv.pypa.io/en/latest/installation.html
 
-Install Pillow:
+Install Pillow:  
 https://pypi.org/project/Pillow/
 
 ## Run
-git clone git@github.com:annachul/wishlist.git
-
-cd wishlist
-
-./manage.py runserver 
+`git clone git@github.com:annachul/wishlist.git`  
+`cd wishlist`  
+`./manage.py runserver`  
