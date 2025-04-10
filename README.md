@@ -2,7 +2,7 @@
 Web app for choosing a gift. Simple project for training Django.
 
 ## Setup
-Prerequisites: 
+Pequisites: 
 
 Install pip:  
 https://pip.pypa.io/en/stable/installation/
